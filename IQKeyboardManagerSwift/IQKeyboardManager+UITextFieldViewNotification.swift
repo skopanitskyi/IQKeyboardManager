@@ -26,7 +26,7 @@ import UIKit
 
 // MARK: UITextField/UITextView Notifications
 @available(iOSApplicationExtension, unavailable)
-internal extension IQKeyboardManager {
+public extension IQKeyboardManager {
 
     private struct AssociatedKeys {
         static var textFieldView = "textFieldView"
@@ -37,7 +37,7 @@ internal extension IQKeyboardManager {
     }
 
     /** To save UITextField/UITextView object voa textField/textView notifications. */
-    weak var textFieldView: UIView? {
+    public weak var textFieldView: UIView? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.textFieldView) as? WeakObjectContainer)?.object as? UIView
         }
